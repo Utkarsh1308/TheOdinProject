@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+<style>
+
+.btn {
+	text-align: center;
+	margin: 40px 5px 0 0;
+}
+
+.top {
+	cursor: pointer;
+}
+
+ #container {
+	margin: auto;
+    margin-top: 15px;
+    width: 500px;
+    height: 500px;
+    border: 10px solid black;
+    border-radius: 10px;
+    font-size: 0;
+    background-color: white;
+ }
+ 
+ .grid {
+	display: inline-block;
+	background: white;
+	box-sizing: border-box;
+ }
+ 
+ .grid:hover {
+	background: black;
+ }
+</style>
+
+<head>
+	<title>Etch A Sketch</title>
+</head>
+
+<body>
+
+	<div class="btn">
+		<button class="top" onclick="gridSize()">Create Grid</button>
+		<button class="top" onclick="resetGrid()">Reset</button>
+	</div>
+		
+	<br><br>
+
+	<div id="container"></div>
+
+	<script>
+		
+		//Javascript Code here
+		const container = document.querySelector('#container');
+		
+		let size = 16;
+		resetGrid();
+		createGrid(size);		
+		colorGrid();
+		
+		function createGrid(size) {				
+			
+			let number = size*size
+			
+			for (i = 0; i<number; i++) {
+				const grid = document.createElement('div');
+				grid.classList.add('grid');
+				grid.style.width = `${500 / size}px`;
+				grid.style.height = `${500 / size}px`;
+				
+				container.appendChild(grid)
+				i++;
+		
+			}
+		}
+		
+		function colorGrid() {
+			color = "black"
+			const x = document.querySelectorAll(".grid")
+			x.forEach(grid => {
+				grid.addEventListener("mouseover", function(e) {
+					grid.style.setProperty("background-color", "black");
+				})
+			})
+		}
+		
+		function resetGrid() {
+			while (container.firstChild) {
+				container.removeChild(container.firstChild);
+			}
+			createGrid(size);
+			colorGrid();
+		}
+			
+		function gridSize() {
+		  size = parseInt(
+			prompt(
+			  "Enter preferred grid size (64 for 64x64 square grid for example)",
+			  "0"
+			));
+			console.log(size);
+		  if (size <= 0) {
+			size = prompt("Enter a number greater than zero.", "0");
+		  }
+		  if (isNaN(size)){
+			return;
+		  }
+		  if (size > 100) {
+			size = prompt("Enter a number less than 100.", "0");
+		  }
+		  resetGrid();
+		  createGrid(size);
+		  colorGrid();
+		}
+		
+		
+	</script>
+
+</body>
+
+</html>

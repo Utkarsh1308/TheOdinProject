@@ -1,0 +1,191 @@
+<html>
+
+<style>
+	body {
+		text-align: center;
+	}
+
+	#calculator {
+		width: 340px;
+		height: 400px;
+		margin-top: 100px;
+		display: inline-block;
+	}
+	
+	.content {
+		height: 410px;
+		border: 5px solid grey;
+	}
+	
+	.display {
+		height: 80px;
+		width: 330px;
+		display: inline-block;
+		text-align: right;
+	}
+
+	.column {
+		height: 80px;
+		width: 335px;
+		display: block;
+		margin-bottom: 4px;
+		margin-right: -10px;
+		padding: 0;
+		text-align: left;
+	}
+
+	button {
+		width: 80px;
+		height: 80px;
+		background: white;
+		border: 1px solid black;
+		margin-right: 0;
+		font-size: 32px;
+	}
+
+</style>
+
+<head>
+	<title>Calculator</title>
+</head>
+
+<body>
+	
+	<div id="calculator">
+		<div class="content">
+			<div class="display">
+				<h1 id="final_number">0</h1>
+			</div>
+			<div class="column">
+				<button onclick="update_display(this)">7</button>
+				<button onclick="update_display(this)">8</button>
+				<button onclick="update_display(this)">9</button>
+				<button onclick="operation(this)">X</button>
+			</div>
+			<div class="column">
+				<button onclick="update_display(this)">4</button>
+				<button onclick="update_display(this)">5</button>
+				<button onclick="update_display(this)">6</button>
+				<button onclick="operation(this)">-</button>
+			</div>
+			<div class="column">
+				<button onclick="update_display(this)">1</button>
+				<button onclick="update_display(this)">2</button>
+				<button onclick="update_display(this)">3</button>
+				<button onclick="operation(this)">+</button>
+			</div>
+			<div class="column">
+				<button onclick="reset()">AC</button>
+				<button onclick="update_display(this)">0</button>
+				<button><strong>.</strong></button>
+				<button onclick="final()">=</button>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<script>
+		//Your Javascript Code here
+		let calculate = 0;
+		let num1 = 0;
+		let num2 = 0;
+		let display_number = '0';
+		
+		function add(num1, num2){
+			let sum = num1 + num2
+			return sum
+		}
+		
+		function subtract(num1, num2){
+			let difference = num1 - num2
+			return difference
+		}
+		
+		function multiply(num1, num2){
+			let product = num1 * num2
+			return product
+		}
+		
+		function divide(num1, num2){
+			let quotient = num1 / num2
+			return quotient
+		}
+		
+		function operate(operator, num1, num2){
+			return operator(num1, num2)
+		}
+		
+		function update_display(element){
+			const display = document.querySelector('#final_number');
+			if (display_number == '0'){
+				display_number = element.textContent;
+			}
+			else {
+				display_number += element.textContent;			
+			}
+			display.innerHTML = display_number;
+			console.log(num1, num2, display_number, calculate);
+		}
+		
+		function reset(){
+			const display = document.querySelector('#final_number');
+			display_number = 0;
+			display.textContent = 0;
+			console.log(display.innerHTML);
+			num1, num2, calculate, display_number = 0;
+			console.log(num1, num2, display_number, calculate);
+		}
+		
+		function operation(operator){
+			get_operator(operator)		
+			
+			if (num1 != 0 && num2 == 0){
+				num2 = Number(display_number);
+				result = calculate(num1, num2);
+				document.querySelector("#final_number").textContent = result;
+				num1 = 0;
+				display_number = String(result);
+				num2 = 0;
+				calculate = 0;
+				get_operator(operator);
+				console.log(num1, num2, display_number, calculate);
+			}
+			
+			if (num1 == 0 && num2 == 0){
+				num1 = Number(display_number);
+				display_number = '0';
+				console.log(num1, num2, display_number, calculate);
+				
+			}		
+		}
+		
+		function get_operator(operator){
+			if (calculate == 0){
+				if (operator.textContent == 'X'){
+				calculate = multiply;
+				}
+				if (operator.textContent == '-'){
+					calculate = subtract;
+				}
+				if (operator.textContent == '+'){
+					calculate = add;
+				}
+			}	
+		}
+		
+		function final(){
+			num2 = Number(display_number);
+			equate = operate(calculate, num1, num2);
+			document.querySelector("#final_number").textContent = equate;
+			num1 = 0;
+			display_number = String(equate);
+			num2 = 0;
+			calculate = 0;
+			console.log(calculate, num1, num2, display_number, calculate);
+		}
+	</script>
+
+</body>
+
+</html>

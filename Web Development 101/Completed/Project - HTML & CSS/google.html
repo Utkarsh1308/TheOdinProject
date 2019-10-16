@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+
+<style>
+
+	ul {
+		text-align: right;
+	}
+
+	li {
+		display: inline;
+	}
+	
+	li a {
+		color: rgba(0,0,0,0.87);
+		text-decoration: none;
+		font-size: 15px;
+		margin: 6px;
+		text-align: right;
+	}
+	
+	li a:hover {
+		color: #a1a1a1;
+		text-decoration: underline;
+	}
+
+	.apps {
+		display: inline-block;
+	    height: 23px;
+	    width: 23px;
+	    background-image: url(https://ssl.gstatic.com/gb/images/i1_1967ca6a.png);
+	    background-position: -135px -42px;
+	    opacity: .55;
+		margin-bottom: -6px;
+	}
+	
+	.user-icon {
+		display: inline-block;
+	    height: 32px;
+	    width: 33.6px;
+	    content: url(https://lh3.googleusercontent.com/-dZ6_oVMpMCo/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reEiYceEOjS8M5LjnXTXTVjutsJsg.CMID/s64-c/photo.jpg);
+		margin-bottom: -6px;
+		border-radius: 17px;
+	}
+
+	#main {
+		position: absolute;
+		top: 30%;
+		width: 100%;
+		text-align: center;
+	}
+	
+	.search {
+		border-radius: 50px;
+		padding: 2px 10px 0 16px;
+		font-size: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		width: 580px;
+		height: 44px;
+		border: 1px solid #dfe1e5;
+	}
+	
+	svg {
+		fill: currentColor;
+		display: block;
+		height: 20px;
+		width: 20px;
+		color: #9AA0A6;
+		font-size: small;
+		margin-top: 10px;
+	}
+	
+	.input {
+		outline: none;
+		background-color: transparent;
+		color: rgba(0,0,0,.87);
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex: 100%;
+		margin: -31px 30px 20px 30px;
+		width: 530px;
+		height: 44px;
+		border: 0 solid #dfe1e5;
+		-webkit-tap-highlight-color: transparent;
+	}
+	
+	.voice {
+		background-image: url(www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png) 0 0 no-repeat;
+		height: 24px;
+		width: 24px;
+		background-size: 24px;
+		vertical-align: middle;
+	}
+	
+	.btn {
+		background-color: #f2f2f2;
+		border-radius: 4px;
+		color: #5f6368
+		cursor: pointer;
+		font-family: arial, sans-serif;
+		font-size: 14px;
+		margin: 11px 4px;
+		width: 300px;
+		padding: 0 16px;
+		text-align: center;
+		height: 36px;
+		width: 150px;
+		border: 1px solid #f2f2f2
+	}
+	
+	.btn:hover {
+		color: black;
+		
+	}
+	
+	.languages a:link {
+		color: #1A0DAB;
+		text-decoration: none;
+		font-size: 13px;
+		font-family: arial, sans-serif;
+	}
+	
+	.languages a:hover {
+		text-decoration: underline;
+	}
+
+	.languages a:visited {
+		color: #609;
+	}
+	
+	.footer ul {
+		text-align: left;
+	}
+	
+	.footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #f2f2f2;
+		display: block;
+	}
+	
+	.ft1 {
+		border-top: 1px solid #e4e4e4;
+	}
+	
+	.ft2 {
+		border-top: 1px solid #e4e4e4;
+	}
+
+</style>
+
+<head>
+
+	<title>Google</title>
+
+</head>
+
+<body>
+
+	<div class="nav">
+		<ul>
+		  <li><a href="contact.asp">Gmail</a></li>
+		  <li><a href="about.asp">Images</a></li>
+		  <li><a class="apps" role="button" href=""></a></li>
+		  <li><a class="user-icon" href="about.asp">Images</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+		<div id="center">
+
+			<img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+			<br>
+			<div class="search">
+				<div>
+					<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+					</svg>
+				
+					<input class="input" type="text"></input><br><br>
+					<div>
+						<span class="voice"></span>
+					</div>
+				</div>
+			</div>
+			<input type="submit" value="Google Search" class="btn"></button>
+			<input type="submit" value="I'm Feeling Lucky" class="btn"></button>
+
+			<br><br>
+			<div class="languages">Google offered in: 
+			
+				<a href="link1">हिन्दी</a>
+				<a href="link2">বাংলা</a>
+				<a href="link3">తెలుగు</a>
+				<a href="link4">मराठी</a>
+				<a href="link5">தமிழ்</a>
+				<a href="link6">ગુજરાતી</a>
+				<a href="link7">ಕನ್ನಡ</a>
+				<a href="link8">മലയാളം</a>
+				<a href="link9">ਪੰਜਾਬੀ</a>	
+				
+			</div>
+		
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="ft1">
+			<ul>
+			  <li><a href="contact.asp">India</a></li>
+			</ul>
+		</div>
+		<div class="ft2">
+			<ul>
+			  <li><a href="contact.asp">Advertising</a></li>
+			  <li><a href="contact.asp">Business</a></li>
+			  <li><a href="contact.asp">About</a></li>
+			  <li><a href="contact.asp">How Search Works</a></li>
+			</ul>
+		</div>
+	</div>
+	
+<!--
+<div id="footer">
+	<p> India </p>
+	<ul>
+	  <li><a href="contact.asp">Advertising</a></li>
+	  <li><a href="about.asp">Business</a></li>
+	  <li><a href="contact.asp">About</a></li>
+	  <li><a href="about.asp">How Search Works</a></li>
+	</ul>
+	<ul>
+	  <li><a href="contact.asp">Provacy</a></li>
+	  <li><a href="about.asp">Terms</a></li>
+	  <li><a href="contact.asp">Settings</a></li>
+	</ul>
+</div>
+-->
+</body>
+
+</html>
